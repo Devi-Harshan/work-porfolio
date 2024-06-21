@@ -11,6 +11,10 @@ const MainPage = () => {
       <Button onClick={() => navigate("/3")}> Lazy Load Data and Modal </Button>
       <Button onClick={() => navigate("/4")}> Counter </Button>
       <Button onClick={() => navigate("/5")}> DependentDropDown </Button>
+      <Button onClick={() => navigate("/6")}>
+        {" "}
+        Parent Child Communication{" "}
+      </Button>
     </div>
   );
 };

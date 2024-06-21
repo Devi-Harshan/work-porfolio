@@ -7,6 +7,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { theme } from "./theme";
 import Counter from "./composites/Counter";
 import DependentDropDown from "./composites/DependentDropDown";
+import { Application } from "./composites/phoneBook";
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
           <Route path="/3" element={<CardData />} />
           <Route path="/4" element={<Counter />} />
           <Route path="/5" element={<DependentDropDown />} />
+          <Route path="/6" element={<Application />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

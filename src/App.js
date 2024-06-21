@@ -1,12 +1,8 @@
-import ConvertCurrency from "./convertCurrency";
 import "./App.css";
+import AppRoutes from "./AppRoutes";
 
 function App() {
-  return (
-    <div className="App">
-      <ConvertCurrency />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

@@ -4,7 +4,14 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 .Dropdown-control {
   border-radius: 0.375rem;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

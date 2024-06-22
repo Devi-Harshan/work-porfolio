@@ -78,7 +78,7 @@ const ConvertCurrency = () => {
       });
   };
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <Stack spacing="4" p={"10rem"}>
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
@@ -157,7 +157,7 @@ const ConvertCurrency = () => {
       <Button className="w-50" onClick={() => navigate("/")}>
         Back
       </Button>
-    </div>
+    </Stack>
   );
 };
 

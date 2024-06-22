@@ -8,6 +8,9 @@ import { theme } from "./theme";
 import Counter from "./composites/Counter";
 import DependentDropDown from "./composites/DependentDropDown";
 import { Application } from "./composites/phoneBook";
+import { LetterTiles } from "./composites/LetterTiles";
+import ProgressBar from "./composites/ProgressBar";
+import SwapContent from "./composites/SwapContent";
 
 const AppRoutes = () => {
   return (
@@ -22,6 +25,9 @@ const AppRoutes = () => {
           <Route path="/4" element={<Counter />} />
           <Route path="/5" element={<DependentDropDown />} />
           <Route path="/6" element={<Application />} />
+          <Route path="/7" element={<LetterTiles />} />
+          <Route path="/8" element={<ProgressBar />} />
+          <Route path="/9" element={<SwapContent />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

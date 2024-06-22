@@ -1,4 +1,4 @@
-import { Input, Button, Card } from "@chakra-ui/react";
+import { Input, Button, Card, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const PhoneNumberInput = () => {
@@ -17,7 +17,7 @@ const PhoneNumberInput = () => {
     setValue(formattedNumber);
   };
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <Stack spacing="4" p={"10rem"}>
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
@@ -26,7 +26,7 @@ const PhoneNumberInput = () => {
         <Input value={value} onChange={handleChange}></Input>
       </Card>
       <Button onClick={() => navigate("/")}>Back</Button>
-    </div>
+    </Stack>
   );
 };
 

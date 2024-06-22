@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Input } from "@chakra-ui/react";
+import { Card, Input, Stack, Text } from "@chakra-ui/react";
 const style = {
   table: {
     borderCollapse: "collapse",
@@ -54,14 +54,7 @@ function PhoneBookForm(props) {
     });
   };
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
-      align="center"
-      justifyContent={"center"}
-      padding={"1rem"}
-    >
+    <Card py="5px" align="center" justifyContent={"center"}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -117,20 +110,22 @@ function InformationTable(props) {
   console.log(props.users);
   const x = props.users.sort((a, b) => a.lastName.localeCompare(b.lastName));
   return (
-    <table style={style.table} className="informationTable">
-      <thead>
-        {x.length > 0 &&
-          x.map((e, i) => {
-            return (
-              <tr key={i}>
-                <th style={style.tableCell}>{e.firstName}</th>
-                <th style={style.tableCell}>{e.lastName}</th>
-                <th style={style.tableCell}>{e.phone}</th>
-              </tr>
-            );
-          })}
-      </thead>
-    </table>
+    <Stack spacing="2" p={"1rem"}>
+      <table style={style.table} className="informationTable">
+        <thead>
+          {x.length > 0 &&
+            x.map((e, i) => {
+              return (
+                <tr key={i}>
+                  <th style={style.tableCell}>{e.firstName}</th>
+                  <th style={style.tableCell}>{e.lastName}</th>
+                  <th style={style.tableCell}>{e.phone}</th>
+                </tr>
+              );
+            })}
+        </thead>
+      </table>
+    </Stack>
   );
 }
 
@@ -143,6 +138,7 @@ export function Application(props) {
   };
   return (
     <section>
+      <Text align={"center"}> Lets Add user and Sort Them</Text>
       <PhoneBookForm addUsers={addUsers} />
       <InformationTable users={users} />
     </section>

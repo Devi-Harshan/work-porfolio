@@ -19,16 +19,17 @@ const DependentDropDown = () => {
         align={"center"}
         boxShadow={"0px 5px 10px 0px #70f54f;"}
         bg="#2c2c2c"
-        color="white"
       >
         <CardHeader>
-          <Heading size="md">Dependent Drop Down</Heading>
+          <Heading size="md" color="white">
+            Dependent Drop Down
+          </Heading>
         </CardHeader>
         <CardBody gap={2}>
           <select onChange={(e) => selectedField(e.target.value)}>
             {countries.map((val, i) => {
               return (
-                <option key={i} value={val.name}>
+                <option style={{ color: "black" }} key={i} value={val.name}>
                   {val.name}
                 </option>
               );

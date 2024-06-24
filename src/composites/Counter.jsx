@@ -5,15 +5,22 @@ import {
   Heading,
   CardBody,
   Button,
+  ButtonGroup,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 const Counter = () => {
   const [counter, setCounter] = useState(0);
-  const navigate = useNavigate();
+
   return (
     <Stack spacing="4" p={"10rem"}>
-      <Card align={"center"} variant={"filled"}>
+      <Card
+        align={"center"}
+        boxShadow={"0px 5px 10px 0px #70f54f;"}
+        bg="#2c2c2c"
+        color="white"
+      >
         <CardHeader>
           <Heading size="md">
             {" "}
@@ -22,13 +29,20 @@ const Counter = () => {
           </Heading>
         </CardHeader>
         <CardBody>
-          <Button onClick={() => setCounter(counter + 1)}>{"Increment"}</Button>
-          <Button onClick={() => setCounter(counter - 1)}>{"Decrement"}</Button>
+          <ButtonGroup spacing={4}>
+            <Button
+              bg="#70f54f"
+              onClick={() => setCounter(counter + 1)}
+              gap="1rem"
+            >
+              {"Increment"}
+            </Button>
+            <Button bg="#70f54f" onClick={() => setCounter(counter - 1)}>
+              {"Decrement"}
+            </Button>
+          </ButtonGroup>
         </CardBody>
       </Card>
-      <Button className="w-50" onClick={() => navigate("/")}>
-        Back
-      </Button>
     </Stack>
   );
 };

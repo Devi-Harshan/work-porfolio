@@ -15,9 +15,8 @@ import {
 import { useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import { useNavigate } from "react-router-dom";
+import ReturnBack from "./ReturnBack";
 const ConvertCurrency = () => {
-  const navigate = useNavigate();
   const options = [
     "AUD",
     "BGN",
@@ -78,86 +77,87 @@ const ConvertCurrency = () => {
       });
   };
   return (
-    <Stack spacing="4" p={"10rem"}>
-      <Card
-        direction={{ base: "column", sm: "row" }}
-        overflow="hidden"
-        variant="outline"
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: "100%", sm: "400px" }}
-          src="./currency.png"
-          alt="Currency"
-        />
+    <>
+      <Stack spacing="4" p={"10rem"}>
+        <Card
+          direction={{ base: "column", sm: "row" }}
+          overflow="hidden"
+          align={"center"}
+          boxShadow={"0px 5px 10px 0px #70f54f;"}
+          bg="#2c2c2c"
+          color="white"
+        >
+          <Image
+            objectFit="cover"
+            maxW={{ base: "100%", sm: "600px" }}
+            src="./currency.png"
+            alt="Currency"
+          />
 
-        <Stack>
-          <CardBody gap={1}>
-            <Heading size="md">Currency Converter</Heading>
+          <Stack>
+            <CardBody gap={1}>
+              <Heading size="md">Currency Converter</Heading>
 
-            <Grid templateColumns="repeat(5, 1fr)" gap={4} py={4}>
-              <GridItem colSpan={2} h="10">
-                <NumberInput
-                  inputMode="numeric"
-                  border={1}
-                  borderColor={"#ccc"}
-                  onChange={(valueString) => setValue(valueString)}
-                  value={value}
-                  max={50}
+              <Grid templateColumns="repeat(5, 1fr)" gap={4} py={4}>
+                <GridItem colSpan={2} h="10">
+                  <NumberInput
+                    inputMode="numeric"
+                    border={1}
+                    borderColor={"#ccc"}
+                    onChange={(valueString) => setValue(valueString)}
+                    value={value}
+                    max={50}
+                  >
+                    <NumberInputField />
+                  </NumberInput>
+                </GridItem>
+                <GridItem colSpan={1} h="10">
+                  {" "}
+                  <Dropdown
+                    style={{ borderRadius: "0.375rem" }}
+                    options={options}
+                    value={defaultOption}
+                    onChange={(value) => setFromValue(value.value)}
+                    placeholder="Select an option"
+                  />
+                </GridItem>
+
+                <GridItem
+                  colSpan={1}
+                  h="10"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
                 >
-                  <NumberInputField />
-                </NumberInput>
-              </GridItem>
-              <GridItem colSpan={1} h="10">
-                {" "}
-                <Dropdown
-                  style={{ borderRadius: "0.375rem" }}
-                  options={options}
-                  value={defaultOption}
-                  onChange={(value) => setFromValue(value.value)}
-                  placeholder="Select an option"
-                />
-              </GridItem>
+                  <Text>To</Text>
+                </GridItem>
+                <GridItem colSpan={1} h="10">
+                  <Dropdown
+                    options={options}
+                    value={defaultOption}
+                    onChange={(value) => setToValue(value.value)}
+                    placeholder="Select an option"
+                  />
+                </GridItem>
+              </Grid>
+              <Text>
+                {convertedValue === undefined
+                  ? `Converted value ${value}  ${fromValue} =  ? ${toValue} `
+                  : `Converted value ${value}  ${fromValue} =${convertedValue} ${toValue} `}
+              </Text>
+            </CardBody>
 
-              <GridItem
-                colSpan={1}
-                h="10"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text>To</Text>
-              </GridItem>
-              <GridItem colSpan={1} h="10">
-                <Dropdown
-                  options={options}
-                  value={defaultOption}
-                  onChange={(value) => setToValue(value.value)}
-                  placeholder="Select an option"
-                />
-              </GridItem>
-            </Grid>
-            <Text>
-              {convertedValue === undefined
-                ? `Converted value ${value}  ${fromValue} =  ? ${toValue} `
-                : `Converted value ${value}  ${fromValue} =${convertedValue} ${toValue} `}
-            </Text>
-          </CardBody>
-
-          <CardFooter>
-            <Button variant="solid" colorScheme="blue" onClick={convert}>
-              Convert
-            </Button>
-          </CardFooter>
-        </Stack>
-      </Card>
-
-      <Button className="w-50" onClick={() => navigate("/")}>
-        Back
-      </Button>
-    </Stack>
+            <CardFooter>
+              <Button variant="solid" bg="#70f54f" onClick={convert}>
+                Convert
+              </Button>
+            </CardFooter>
+          </Stack>
+        </Card>
+      </Stack>
+    </>
   );
 };
 

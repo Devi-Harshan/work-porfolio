@@ -26,8 +26,9 @@ const ProgressBar = () => {
         style={{
           display: "grid",
           placeItems: "center",
-          padding: "10px 0px",
+          padding: "10px 10px",
           gap: "1rem",
+          width: "75%",
         }}
       >
         <div
@@ -42,7 +43,7 @@ const ProgressBar = () => {
           <div
             style={{
               height: "5vh",
-              width: progress ? progress + "vw" : "0vw",
+              width: progress ? progress + "%" : "0%",
               backgroundColor: "green",
               borderRadius: "20px",
               position: "absolute",
@@ -61,12 +62,21 @@ const ProgressBar = () => {
             </div>
           </div>
         </div>
-        <Button variant={"outline"} onClick={increaseProgress}>
-          Start
-        </Button>
-        <Button variant={"outline"} onClick={clear}>
-          Clear
-        </Button>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            gap: "1rem",
+          }}
+        >
+          <Button bg="#70f54f" onClick={increaseProgress}>
+            Start
+          </Button>
+          <Button bg="#70f54f" onClick={clear}>
+            Clear
+          </Button>
+        </div>
       </div>
     </Stack>
   );

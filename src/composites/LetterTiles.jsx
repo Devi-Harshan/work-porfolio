@@ -22,6 +22,7 @@ const style = {
   outputString: {
     marginTop: "20px",
     textAlign: "center",
+    color: "white",
   },
 };
 
@@ -78,4 +79,3 @@ export const LetterTiles = () => {
     </section>
   );
 };
-

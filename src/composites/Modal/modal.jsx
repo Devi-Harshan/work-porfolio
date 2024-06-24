@@ -19,7 +19,9 @@ const ModalOpen = ({ dataFetched }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen}>View Details</Button>
+      <Button bg="#70f54f" onClick={onOpen}>
+        View Details
+      </Button>
       <Modal
         isCentered
         onClose={onClose}

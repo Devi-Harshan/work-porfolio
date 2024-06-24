@@ -54,7 +54,12 @@ const CardData = () => {
         templateColumns="repeat(auto-fill, minmax(300px, 3fr))"
       >
         {lazyLoadedData.map((dataFetched) => (
-          <Card key={dataFetched.id}>
+          <Card
+            key={dataFetched.id}
+            boxShadow={"1px 3px 3px 0px #70f54f;"}
+            bg="#2c2c2c"
+            color="white"
+          >
             <CardBody>
               <Flex gap={1} justifyContent="center" alignItems="center">
                 <Image
@@ -69,7 +74,8 @@ const CardData = () => {
                   size="md"
                   justifyContent="center"
                   alignItems="center"
-                s>{`${dataFetched?.firstname}  ${dataFetched?.lastname}`}</Heading>
+                  s
+                >{`${dataFetched?.firstname}  ${dataFetched?.lastname}`}</Heading>
               </Stack>
             </CardBody>
             <Divider />

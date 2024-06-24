@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-import { Text, List, Checkbox, Stack, Button } from "@chakra-ui/react";
+import {
+  Text,
+  List,
+  Checkbox,
+  Stack,
+  Button,
+  ListItem,
+} from "@chakra-ui/react";
 const SwapContent = () => {
   const [list1, setList1] = useState([
     {
@@ -57,32 +64,36 @@ const SwapContent = () => {
     setList2(updatedList2);
   };
   return (
-    <Stack spacing="4" p={"10rem"}>
+    <Stack p={"10rem"} bg="#2c2c2c" color="white">
       <Text spacing={4}>Lets swap the list items checked</Text>
 
       <div style={{ display: "flex", flexDirection: "row", gap: "5rem" }}>
-        <List>
+        <List spacing={3} display={"grid"}>
           {list1.map((item, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               <Checkbox
                 isChecked={item.checked}
                 onChange={() => handleChange(index)}
               ></Checkbox>
-              <span>{item.id}</span>
-            </li>
+              <span style={{ padding: "5px" }}>{item.id}</span>
+            </ListItem>
           ))}
         </List>
 
-        <List>
+        <List spacing={3} display={"grid"}>
           {list2.map((item, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               <span>{item.id}</span>
-            </li>
+            </ListItem>
           ))}
         </List>
       </div>
 
-      <Button onClick={handleSwap}>Swap the checked list items </Button>
+      <div>
+        <Button bg="#70f54f" onClick={handleSwap}>
+          Swap the checked list items{" "}
+        </Button>
+      </div>
     </Stack>
   );
 };

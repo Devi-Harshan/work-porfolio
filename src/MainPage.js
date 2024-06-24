@@ -7,7 +7,7 @@ const MainPage = () => {
   const obj = [
     {
       id: 1,
-      name: "Current Converter",
+      name: "Currency Converter",
     },
     {
       id: 2,
@@ -43,22 +43,19 @@ const MainPage = () => {
     },
   ];
   return (
-    <SimpleGrid minChildWidth="120px" spacing="40px" padding={4}>
+    <SimpleGrid minChildWidth="240px" spacing="40px" padding={4}>
       {obj.map((item) => {
         return (
           <Box
             as="button"
+            onClick={() => navigate(`/${item.id}`)}
             borderRadius="md"
-            bg="tomato"
             color="white"
             px={0}
-            height="80px"
+            height="150px"
+            boxShadow={"0px 5px 10px 0px #70f54f;"}
           >
-            <Button
-              variant={"outlined"}
-              size="sm"
-              onClick={() => navigate(`/${item.id}`)}
-            >
+            <Button variant={"outlined"} size="sm">
               {item.name}{" "}
             </Button>
           </Box>

@@ -3,6 +3,8 @@ import { Card, Input, Stack, Text } from "@chakra-ui/react";
 const style = {
   table: {
     borderCollapse: "collapse",
+    border: "1px solid white",
+    color: "white",
   },
   tableCell: {
     border: "1px solid gray",
@@ -21,6 +23,7 @@ const style = {
     },
     inputs: {
       marginBottom: "5px",
+      border: "1px solid grey",
     },
     submitBtn: {
       marginTop: "10px",
@@ -138,9 +141,20 @@ export function Application(props) {
   };
   return (
     <section>
-      <Text align={"center"}> Lets Add user and Sort Them</Text>
-      <PhoneBookForm addUsers={addUsers} />
-      <InformationTable users={users} />
+      <Text align={"center"} color={"white"} padding="1rem">
+        {" "}
+        Lets add user and sort them based on last name
+      </Text>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <PhoneBookForm addUsers={addUsers} />
+        <InformationTable users={users} />
+      </div>
     </section>
   );
 }

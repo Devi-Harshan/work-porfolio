@@ -1,14 +1,15 @@
-import { Card, Button, Input } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import {useDebounce} from "../hooks/useDebounce"
+import { Card, Input } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useDebounce } from "../hooks/useDebounce";
 const GetDebounce = () => {
-  const navigate = useNavigate();
-
   const [value, setValue] = useState("");
+  const debouncedValue = useDebounce(value, 500);
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setValue(e.target.value);
   };
+  useEffect(() => {
+    console.log(debouncedValue);
+  }, [debouncedValue]);
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <Card
@@ -16,9 +17,8 @@ const GetDebounce = () => {
         overflow="hidden"
         variant="outline"
       >
-        <Input value={value} onChange={handleChange}></Input>
+        <Input value={debouncedValue} onChange={handleChange}></Input>
       </Card>
-      <Button onClick={() => navigate("/")}>Back</Button>
     </div>
   );
 };

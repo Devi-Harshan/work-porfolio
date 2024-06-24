@@ -1,16 +1,6 @@
-import {
-  Stack,
-  Card,
-  CardHeader,
-  Heading,
-  CardBody,
-  Button,
-} from "@chakra-ui/react";
+import { Card, CardBody, CardHeader, Heading, Stack } from "@chakra-ui/react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const DependentDropDown = () => {
-  const navigate = useNavigate();
-
   const countries = [
     { name: "India", value: "IN", cities: ["Delhi", "Mumbai"] },
     { name: "Pak", value: "PK", cities: ["Lahore", "Karachi"] },
@@ -25,7 +15,12 @@ const DependentDropDown = () => {
   };
   return (
     <Stack spacing="4" p={"10rem"}>
-      <Card align={"center"} variant={"filled"}>
+      <Card
+        align={"center"}
+        boxShadow={"0px 5px 10px 0px #70f54f;"}
+        bg="#2c2c2c"
+        color="white"
+      >
         <CardHeader>
           <Heading size="md">Dependent Drop Down</Heading>
         </CardHeader>
@@ -54,9 +49,6 @@ const DependentDropDown = () => {
           )}
         </CardBody>
       </Card>
-      <Button className="w-50" onClick={() => navigate("/")}>
-        Back
-      </Button>
     </Stack>
   );
 };

@@ -11,6 +11,7 @@ import { Application } from "./composites/phoneBook";
 import { LetterTiles } from "./composites/LetterTiles";
 import ProgressBar from "./composites/ProgressBar";
 import SwapContent from "./composites/SwapContent";
+import Weather from "./composites/Weather/WeatherApp";
 
 const AppRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const AppRoutes = () => {
           <Route path="/7" element={<LetterTiles />} />
           <Route path="/8" element={<ProgressBar />} />
           <Route path="/9" element={<SwapContent />} />
+          <Route path="/10" element={<Weather />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

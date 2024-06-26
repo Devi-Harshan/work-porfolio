@@ -21,7 +21,7 @@ const ProgressBar = () => {
     if (start) increaseProgress();
   }, [increaseProgress]);
   return (
-    <Stack spacing="4" py={"10rem"}>
+    <Stack spacing="4" py={"10rem"} backgroundColor="#2c2c2c" h={"100vh"}>
       <div
         style={{
           display: "grid",

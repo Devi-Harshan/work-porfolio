@@ -6,6 +6,10 @@ const MainPage = () => {
 
   const obj = [
     {
+      id: 10,
+      name: "Weather App",
+    },
+    {
       id: 1,
       name: "Currency Converter",
     },
@@ -43,7 +47,16 @@ const MainPage = () => {
     },
   ];
   return (
-    <SimpleGrid minChildWidth="240px" spacing="40px" padding={4}>
+    <SimpleGrid
+      minChildWidth="240px"
+      spacing="40px"
+      padding={4}
+      style={{
+        backgroundColor: "#2c2c2c",
+        height: "100vh",
+        padding: "1rem",
+      }}
+    >
       {obj.map((item) => {
         return (
           <Box

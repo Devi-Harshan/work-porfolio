@@ -140,7 +140,13 @@ export function Application(props) {
     setUsers([...users, user]);
   };
   return (
-    <section>
+    <section
+      style={{
+        backgroundColor: "#2c2c2c",
+        height: "100vh",
+        padding: "1rem",
+      }}
+    >
       <Text align={"center"} color={"white"} padding="1rem">
         {" "}
         Lets add user and sort them based on last name

@@ -14,7 +14,7 @@ const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   return (
-    <Stack spacing="4" p={"10rem"}>
+    <Stack spacing="4" p={"10rem"} backgroundColor="#2c2c2c" h={"100vh"}>
       <Card
         align={"center"}
         boxShadow={"0px 5px 10px 0px #70f54f;"}

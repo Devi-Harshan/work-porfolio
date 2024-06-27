@@ -18,7 +18,7 @@ const ProgressBar = () => {
   };
   useEffect(() => {
     if (start) increaseProgress();
-  }, [increaseProgress]);
+  }, [increaseProgress, start]);
   return (
     <Stack spacing="4" py={"10rem"} backgroundColor="#2c2c2c" h={"100vh"}>
       <div

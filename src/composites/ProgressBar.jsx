@@ -43,7 +43,7 @@ const ProgressBar = () => {
           <div
             style={{
               height: "5vh",
-              width: progress ? progress + "%" : "0%",
+
               backgroundColor: "green",
               borderRadius: "20px",
               position: "absolute",

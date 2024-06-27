@@ -1,5 +1,5 @@
 import { Button, Stack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
   const [start, setStart] = useState(false);
@@ -16,9 +16,7 @@ const ProgressBar = () => {
     setProgress(0);
     setStart(false);
   };
-  useEffect(() => {
-    if (start) increaseProgress();
-  }, [increaseProgress, start]);
+  console.log(start);
   return (
     <Stack spacing="4" py={"10rem"} backgroundColor="#2c2c2c" h={"100vh"}>
       <div

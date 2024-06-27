@@ -1,17 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./MainPage";
-import ConvertCurrency from "./composites/ConvertCurrency";
-import PhoneNumberInput from "./composites/PhoneNumberInput";
 import CardData from "./composites/Card/card";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { theme } from "./theme";
+import ConvertCurrency from "./composites/ConvertCurrency";
 import Counter from "./composites/Counter";
 import DependentDropDown from "./composites/DependentDropDown";
-import { Application } from "./composites/phoneBook";
 import { LetterTiles } from "./composites/LetterTiles";
+import PhoneNumberInput from "./composites/PhoneNumberInput";
 import ProgressBar from "./composites/ProgressBar";
 import SwapContent from "./composites/SwapContent";
 import Weather from "./composites/Weather/WeatherApp";
+import { Application } from "./composites/phoneBook";
+import { theme } from "./theme";
 
 const AppRoutes = () => {
   return (

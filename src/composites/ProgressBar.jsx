@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Stack, Button } from "@chakra-ui/react";
+import { Button, Stack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
   const [start, setStart] = useState(false);

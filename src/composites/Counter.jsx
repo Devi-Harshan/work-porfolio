@@ -1,12 +1,11 @@
 import {
-  Stack,
-  Card,
-  CardHeader,
-  Heading,
-  CardBody,
   Button,
   ButtonGroup,
-  Text,
+  Card,
+  CardBody,
+  CardHeader,
+  Heading,
+  Stack
 } from "@chakra-ui/react";
 import { useState } from "react";
 

@@ -1,29 +1,32 @@
 import { Button, Stack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
   const [start, setStart] = useState(false);
 
-  const increaseProgress = () => {
+  const increaseProgress = useCallback(() => {
     setStart(true);
     for (let i = progress; i < 100; i++) {
       setTimeout(() => {
         setProgress(progress + 10);
       }, 1000);
     }
-  };
+  }, [progress]);
   const clear = () => {
     setProgress(0);
     setStart(false);
   };
-  console.log(start);
+
+  useEffect(() => {
+    if (start) increaseProgress();
+  }, [start, increaseProgress]);
   return (
     <Stack spacing="4" py={"10rem"} backgroundColor="#2c2c2c" h={"100vh"}>
       <div
         style={{
           display: "grid",
           placeItems: "center",
-          padding: "10px 10px",
+          padding: "5rem",
           gap: "1rem",
           width: "75%",
         }}
@@ -40,7 +43,7 @@ const ProgressBar = () => {
           <div
             style={{
               height: "5vh",
-
+              width: progress ? progress + "%" : "0%",
               backgroundColor: "green",
               borderRadius: "20px",
               position: "absolute",

@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
+import { Stack } from "@chakra-ui/react";
 
 const style = {
   letterContainer: {
@@ -8,11 +9,12 @@ const style = {
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
+    height: "100%",
   },
   letter: {
     float: "left",
-    padding: "10px 10px",
-    background: "#c9e4ed",
+    padding: "20px 20px",
+    boxShadow: "0px 5px 10px 0px #70f54f",
     borderRadius: "5px",
     marginRight: "5px",
     marginTop: "5px",
@@ -21,7 +23,6 @@ const style = {
   outputString: {
     marginTop: "20px",
     textAlign: "center",
-    color: "white",
   },
 };
 
@@ -59,22 +60,24 @@ export const LetterTiles = () => {
     return arr;
   }, []);
   return (
-    <section>
-      <aside style={style.letterContainer} id="letterContainer">
-        {alphabetArray.map((letter, index) => (
-          <Tile
-            tally={tally}
-            setTally={setTally}
-            letter={letter}
-            key={index}
-            outputArray={outputArray}
-            setOutputArray={setOutputArray}
-          />
-        ))}
-      </aside>
-      <div style={style.outputString} id="outputString">
-        {outputArray.join("")}
-      </div>
-    </section>
+    <Stack h={"100%"} p={"10rem"} bg="#2c2c2c" color="white">
+      <section>
+        <aside style={style.letterContainer} id="letterContainer">
+          {alphabetArray.map((letter, index) => (
+            <Tile
+              tally={tally}
+              setTally={setTally}
+              letter={letter}
+              key={index}
+              outputArray={outputArray}
+              setOutputArray={setOutputArray}
+            />
+          ))}
+        </aside>
+        <div style={style.outputString} id="outputString">
+          {outputArray.join("")}
+        </div>
+      </section>
+    </Stack>
   );
 };

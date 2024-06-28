@@ -64,7 +64,7 @@ const SwapContent = () => {
     setList2(updatedList2);
   };
   return (
-    <Stack p={"10rem"} bg="#2c2c2c" color="white">
+    <Stack h={"100%"} p={"10rem"} bg="#2c2c2c" color="white">
       <Text spacing={4}>Lets swap the list items checked</Text>
 
       <div style={{ display: "flex", flexDirection: "row", gap: "5rem" }}>

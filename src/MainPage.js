@@ -5,10 +5,10 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   const obj = [
-    {
+    /*  {
       id: 10,
       name: "Weather App",
-    },
+    }, */
     {
       id: 1,
       name: "Currency Converter",
@@ -49,7 +49,7 @@ const MainPage = () => {
   return (
     <SimpleGrid
       minChildWidth="240px"
-      spacing="40px"
+      spacing="20px"
       padding={4}
       style={{
         backgroundColor: "#2c2c2c",

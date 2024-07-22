@@ -14,8 +14,12 @@ const MainPage = () => {
       name: "Currency Converter",
     },
     {
-      id: 2,
-      name: "Format Number",
+      id: 6,
+      name: "Parent Child",
+    },
+    {
+      id: 9,
+      name: "Swap List",
     },
     {
       id: 3,
@@ -29,10 +33,7 @@ const MainPage = () => {
       id: 5,
       name: "DropDown",
     },
-    {
-      id: 6,
-      name: "Parent Child",
-    },
+
     {
       id: 7,
       name: "Letter Tiles",
@@ -41,9 +42,10 @@ const MainPage = () => {
       id: 8,
       name: "ProgressBar",
     },
+
     {
-      id: 9,
-      name: "Swap List",
+      id: 2,
+      name: "Format Number",
     },
   ];
   return (

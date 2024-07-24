@@ -22,6 +22,10 @@ const MainPage = () => {
       name: "Swap List",
     },
     {
+      id: 11,
+      name: "Create Notes",
+    },
+    {
       id: 3,
       name: "Lazy Load Data",
     },

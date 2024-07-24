@@ -12,6 +12,7 @@ import SwapContent from "./composites/SwapContent";
 import Weather from "./composites/Weather/WeatherApp";
 import { Application } from "./composites/phoneBook";
 import { theme } from "./theme";
+import CreateNotes from "./composites/CreateNotes";
 
 const AppRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path="/8" element={<ProgressBar />} />
           <Route path="/9" element={<SwapContent />} />
           <Route path="/10" element={<Weather />} />
+          <Route path="/11" element={<CreateNotes />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
